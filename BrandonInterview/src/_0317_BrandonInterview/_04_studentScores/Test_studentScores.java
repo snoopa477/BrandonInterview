@@ -11,24 +11,19 @@ public class Test_studentScores {
 	public static void main(String[] args) {
 		
 		{
-			int[] scores = {1, 6, 3, 4, 3, 5};
-			out.println("before changed ");
-			ArrayHelper.print(scores);
-			changeScores(scores);
-			out.println("after changed ");
-			ArrayHelper.print(scores);
+			int[][] arrayOfScores = {{1, 6, 3, 4, 3, 5}
+								  ,{100, 50, 40, 30}
+								  ,{75, 47, 60, 89, 90}};
 			
+			for(int i = 0 ; i < arrayOfScores.length; i++) {
+				out.println("[case " + i + "]");
+				out.println("before changed ");
+				ArrayHelper.print(arrayOfScores[i]);
+				changeScores(arrayOfScores[i]);
+				out.println("after changed ");
+				ArrayHelper.print(arrayOfScores[i]);
+			}
 		}
-		
-		{
-			int[] scores = {100, 50, 40, 30};
-			out.println("\nbefore changed ");
-			ArrayHelper.print(scores);
-			changeScores(scores);
-			out.println("after changed ");
-			ArrayHelper.print(scores);
-		}
-		
 	}
 	
 	private static void changeScores(int[] scores) {

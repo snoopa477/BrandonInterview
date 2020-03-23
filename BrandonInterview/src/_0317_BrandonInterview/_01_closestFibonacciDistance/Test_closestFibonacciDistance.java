@@ -2,7 +2,6 @@ package _0317_BrandonInterview._01_closestFibonacciDistance;
 
 import static java.lang.System.out;
 
-import java.util.ArrayList;
 
 public class Test_closestFibonacciDistance {
 
@@ -10,7 +9,8 @@ public class Test_closestFibonacciDistance {
 		
 		{
 			int num = 10000;
-			out.println("The smallest Fibonacci that is larger than " + 10000 + " and its lower Fibonaccis");
+			out.println("The smallest Fibonacci that is larger than " 
+						+ num + " and its lower Fibonaccis");
 			Fibonacci fibonacci = new Fibonacci(num);
 			out.println( fibonacci );
 		}
@@ -21,7 +21,7 @@ public class Test_closestFibonacciDistance {
 			
 			int[] inputs = { 15, 1, 13, 300, 1000, 10000, 1000000 };
 			
-			out.println("input : closestDistanceToFibonacci");
+			out.println("input : closest distance to Fibonacci");
 			for(int input: inputs) {
 				out.println( input + " : " +  cloesetFibonacciLocator.getClosestDistanceToFibonacci(input));
 			}

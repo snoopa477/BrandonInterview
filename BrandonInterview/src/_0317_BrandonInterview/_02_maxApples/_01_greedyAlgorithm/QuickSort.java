@@ -7,57 +7,58 @@ public class QuickSort {
 		quickSort(array, 0 , array.length-1);
 	}
 	
-	public static void quickSort(int[] array, int low_index, int high_index) {
+	public static void quickSort(int[] array, int low, int high) {
 		
-		int right_part_low_index = partition(array, low_index, high_index);
-		int left_part_high_index = right_part_low_index -1;
-		
-		if( low_index < left_part_high_index ) {
-			quickSort(array, low_index, left_part_high_index);
+		if( low < high == false) {
+			return;
 		}
 		
-		if(right_part_low_index < high_index) {
-			quickSort(array, right_part_low_index, high_index);
+		int right_start = partition(array, low, high);
+		int left_end = right_start -1;
+		
+		if( low < left_end ) {
+			quickSort(array, low, left_end);
+		}
+		
+		if(right_start < high) {
+			quickSort(array, right_start, high);
 		}
 		
 	}
 
-	
-	private static int partition(int[] array, int low_index, int high_index) {
+	private static int partition(int[] array, int low, int high) {
 		
-		int pivot_index = low_index + (high_index - low_index) /2;
-		int pivot = array[pivot_index];
-		
-		while(low_index <= high_index) {
+		int pivot = array[low + (high - low) /2];
+		while(low <= high) {
 			
-			while(low_index <= high_index ) {
+			while(low <= high ) {
 				
-				while(array[low_index] < pivot) {
-					low_index++;
+				while(array[low] < pivot) {
+					low++;
 				}
 				
-				while(array[high_index] > pivot) {
-					high_index--;
+				while(array[high] > pivot) {
+					high--;
 				}
 				
-				if( low_index <= high_index ) {
-					swap(array, low_index, high_index);
-					low_index++;
-					high_index--;
+				if( low <= high ) {
+					swap(array, low, high);
+					low++;
+					high--;
 				}
 			}
 		}
 		
-		int right_part_low_index = low_index;
-		return right_part_low_index;
+		int right_start = low;
+		return right_start;
 		
 	}
 	
-	private static void swap(int[] array, int a_index, int b_index) {
+	private static void swap(int[] array, int a, int b) {
 		
-		int temp = array[a_index];
-		array[a_index] = array[b_index];
-		array[b_index] = temp;
+		int temp = array[a];
+		array[a] = array[b];
+		array[b] = temp;
 	}
 	
 }

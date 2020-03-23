@@ -11,13 +11,10 @@ public class Test_bitwiseOperation {
 		for(int input : inputs) {
 			out.println(input + ": " + convertOneZeroInHexDigits(input));
 		}
-		
 	}
 	
 	public static String convertOneZeroInHexDigits(int num) {
-		
 		StringBuilder sb = new StringBuilder();
-		
 		while( num > 0 ) {
 			
 			int leastSignificantHexDigit = BitwiseOperation.getLeastSignificantHexDigit(num);
@@ -34,8 +31,6 @@ public class Test_bitwiseOperation {
 			
 			num = BitwiseOperation.shfitRightHexDigit(num);
 		}
-		
-		
 		
 		return sb.reverse().toString();
 		
